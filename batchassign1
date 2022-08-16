@@ -1,7 +1,14 @@
 pipeline 
 {
   agent any
-      stages{
+        stages{
+        stage('deploy')
+        {
+        steps
+        {
+        sh "echo this is the deploy stage"
+        }
+        }
                stage('testing1')
         {
         when {
