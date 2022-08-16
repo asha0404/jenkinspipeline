@@ -21,7 +21,7 @@ parameters {
 }
 stage ('testing')
 {
-when (choice == 'test'
+when (choice == 'test')
 steps
 {
     sh "echo this is testing 2 stage"
