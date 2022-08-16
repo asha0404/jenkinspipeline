@@ -4,14 +4,7 @@ parameters {
 }
   agent none
       stages{
-        stage('checkout')
-        {
-        steps
-        {
-        git credentialsId: 'c5aa0612-9d9b-4219-8a1e-351349d3b2da', url: 'https://github.com/asha0404/jenkinspipeline.git'    
-        }
-        }
-        stage('testing1')
+               stage('testing1')
         {
         when {
                 expression { params.BRANCH_NAME == 'master' }
