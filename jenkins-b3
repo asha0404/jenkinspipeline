@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+parameters {
+  choice choices: ['build', 'deploy', 'test'], name: 'choice'
+}
+    stages{
+        stage('build')
+        {
+        when {choice == 'build'}
+        steps
+        {
+       sh 'echo "this is for build"'
+ } 
+        }
+        stage('deploy')
+        {
+        when {choice =='deploy'}
+                  steps{
+       sh "echo this is a deploy stage"
+}
+}
+stage ('testing')
+{
+when (choice == 'test'
+steps
+{
+    sh "echo this is testing 2 stage"
+}
+}
+}
+}
+}
+}
