@@ -10,7 +10,7 @@ pipeline
         sh "echo this is the deploy stage"
         }
         }
-        stage ('test")
+        stage ('test')
         {
         parallel{
                stage('testing1')
