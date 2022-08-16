@@ -2,7 +2,7 @@ pipeline {
 parameters {
   choice choices: ['master', 'main', 'dev'], name: 'BRANCH_NAME'
 }
-  agent none
+  agent any
       stages{
                stage('testing1')
         {
