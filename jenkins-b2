@@ -2,13 +2,18 @@ pipeline {
     agent any
 parameters {
   string defaultValue: 'master', description: 'this should work only for master git branch', name: 'git branch'
+  
 }
     stages{
         stage('checkout')
         {
+        when {
+                expression { params.git branch == 'master' }
+            }
         steps
         {
-        git credentialsId: 'c5aa0612-9d9b-4219-8a1e-351349d3b2da', url: 'https://github.com/asha0404/jenkinspipeline.git'    
+        git credentialsId: 'c5aa0612-9d9b-4219-8a1e-351349d3b2da', url: 'https://github.com/asha0404/jenkinspipeline.git'
+        
         }
         }
         stage('testing')
@@ -31,4 +36,4 @@ steps
 }
 }
 }
-}
+
